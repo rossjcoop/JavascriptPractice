@@ -7,8 +7,8 @@
 // Expected Output : 34223 
 
 /////This is one way to reverse a string./////
-function reverse(s) {
-  var i = s.length,
+function reverse(string) {
+  let i = string.length,
       o = '';
   while (i > 0) {
     o += s.substring(i - 1, i);
@@ -144,6 +144,28 @@ function vowelCount(string) {
 }
 
 console.log(vowelCount(string))
+
+
+
+
+
+// Write a function that takes two strings and determines whether they're anagrams or not.
+
+
+
+function isAnagram(s1, s2) {
+  let string1array = s1.toLowerCase().split('').sort().join()
+  let string2array = s2.toLowerCase().split('').sort().join()
+  
+  if(string1array == string2array){
+    return true
+  } else {
+    return false
+  }
+   
+}
+
+console.log(isAnagram('Dave Barry', 'Ray Adverb'))
 
 	
 
