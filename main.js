@@ -11,7 +11,7 @@ function reverse(string) {
   let i = string.length,
       o = '';
   while (i > 0) {
-    o += s.substring(i - 1, i);
+    o += string.substring(i - 1, i);
     i--;
   }
   return o;
@@ -166,6 +166,31 @@ function isAnagram(s1, s2) {
 }
 
 console.log(isAnagram('Dave Barry', 'Ray Adverb'))
+
+
+
+
+
+
+function removeSmallest(arr) {
+  let lowest = arr[0]
+  for(let i = 0; i < arr.length; i ++) {
+    if(arr[i] < lowest) {
+      lowest = arr[i]
+    }
+  }
+  let lowestIndex = arr.findIndex(item => item == lowest)
+  arr.splice(lowestIndex, 1)
+   
+  return arr
+    
+}
+
+
+console.log(removeSmallest([4, 1, 2, 10, 15]))
+
+
+
 
 	
 
