@@ -195,7 +195,6 @@ console.log(removeSmallest([4, 1, 2, 10, 15]))
 // Create a function that takes a string and returns the middle character(s). If the word's length is odd, return the middle character. If the word's length is even, return the middle two characters.
 
 
-
 function getMiddle(str) {
   let middle = str.split('')
   let middleChar = middle.length / 2
@@ -215,7 +214,20 @@ function getMiddle(str) {
 console.log(getMiddle('hello'))
 	
 
+//Create a function that takes a number as its only argument and returns true if it's less than or equal to zero, otherwise return false.
 
+
+function lessThanOrEqualToZero(num) {
+
+	if(num <= 0) {
+		return true
+	} else {
+		return false
+	}
+	
+}
+
+console.log(lessThanOrEqualToZero(1))
 
 
 
