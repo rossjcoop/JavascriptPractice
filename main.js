@@ -230,6 +230,17 @@ function lessThanOrEqualToZero(num) {
 console.log(lessThanOrEqualToZero(1))
 
 
+//Take an array of integers (positive or negative or both) and return the sum of the absolute value of each element.
+
+
+function getAbsSum(arr){
+	let sum = 0
+	let finalsum = arr.reduce(item => item + sum)
+	return finalsum 
+}
+
+console.log(getAbsSum([1, 2, 3, 4]))
+
 
 
 
