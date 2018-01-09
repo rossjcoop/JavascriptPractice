@@ -235,11 +235,13 @@ console.log(lessThanOrEqualToZero(1))
 
 function getAbsSum(arr){
 	let sum = 0
-	let finalsum = arr.reduce(item => item + sum)
-	return finalsum 
+	for(let i = 0; i < arr.length; i++) {
+		sum += Math.abs(arr[i])
+	}
+	return sum 
 }
 
-console.log(getAbsSum([1, 2, 3, 4]))
+console.log(getAbsSum([1, -2, 3, 4]))
 
 
 
