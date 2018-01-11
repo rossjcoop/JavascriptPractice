@@ -245,6 +245,29 @@ console.log(getAbsSum([1, -2, 3, 4]))
 
 
 
+//Create a function that, given 2 dates, returns the names of the months that are present between them (inclusive).
+
+
+const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+function monthsInterval(dateStart, dateEnd) {
+	let monthStart = dateStart.getMonth()
+	let monthEnd = dateEnd.getMonth()
+	let monthSpan = monthNames.sort(item => )
+
+
+	// let months = []
+	// for(let i = 0; i < monthNames.length; i++ {
+	// 	if monthNames[i] 
+	// })
+
+
+
+}
+var january2017 = new Date(2017, 0, 1);
+var january2018 = new Date(2018, 0, 1);
+
+console.log(january2017, january2018)
 
 
 
