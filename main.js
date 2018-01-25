@@ -251,23 +251,36 @@ console.log(getAbsSum([1, -2, 3, 4]))
 const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
 function monthsInterval(dateStart, dateEnd) {
-	let monthStart = dateStart.getMonth()
-	let monthEnd = dateEnd.getMonth()
-	let monthSpan = monthNames.sort(item => )
+	let indexStart = dateStart.getMonth()
+	let indexEnd = dateEnd.getMonth()
+	let months = []
+
+	// if(indexEnd == indexStart) {
+	// 	indexEnd = 12
+	// } else {
+	// 	indexEnd = dateEnd.getMonth()
+	// }
+
+	// let months = monthNames.slice(indexStart, indexEnd + 1)
+
+	// return months
 
 
-	// let months = []
-	// for(let i = 0; i < monthNames.length; i++ {
-	// 	if monthNames[i] 
-	// })
 
+	for(let i = indexStart; i < monthNames.length; i++) {
+		months.push({i})
+	}
 
-
+	return months
 }
-var january2017 = new Date(2017, 0, 1);
+
+
+var december2017 = new Date(2017, 11, 1);
 var january2018 = new Date(2018, 0, 1);
 
-console.log(january2017, january2018)
+
+console.log(monthsInterval(december2017, january2018))
+
 
 
 
