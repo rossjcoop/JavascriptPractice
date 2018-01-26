@@ -261,6 +261,9 @@ function monthsInterval(dateStart, dateEnd) {
     	months.push(monthNames[pointer])
     	}  
 	} else {
+		////start at the ending index and work until the beginning index, remove those indecies!
+
+
 		
 
 	}
