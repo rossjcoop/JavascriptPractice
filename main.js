@@ -253,19 +253,18 @@ const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'Jul
 function monthsInterval(dateStart, dateEnd) {
 	let indexStart = dateStart.getMonth()
 	let indexEnd = dateEnd.getMonth()
-	let indexStartYear = dateStart.getYear()
-	let indexEndYear = dateStart.getYear()
 	let months = []
 
-	if (indexStartYear > indexEndYear)
-
-
-	for(let i = 0; i < monthNames.length; i++) {
+	if(indexStart <= indexEnd) {
+		for(let i = 0; i < monthNames.length; i++) {
     	let pointer = (i + indexStart) % monthNames.length;
-    	months.push(monthNames[pointer])   
+    	months.push(monthNames[pointer])
+    	}  
+	} else {
+		
+
 	}
 
-	return months
 }
 
 
