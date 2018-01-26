@@ -253,20 +253,26 @@ const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'Jul
 function monthsInterval(dateStart, dateEnd) {
 	let indexStart = dateStart.getMonth()
 	let indexEnd = dateEnd.getMonth()
-	let months = []
+	let months = monthNames.slice(indexEnd, indexStart)
 
-	if(indexStart <= indexEnd) {
-		for(let i = 0; i < monthNames.length; i++) {
-    	let pointer = (i + indexStart) % monthNames.length;
-    	months.push(monthNames[pointer])
-    	}  
-	} else {
+	return months
+
+
+
+
+		// for(let i = 0; i < monthNames.length; i++) {
+  //   	let pointer = (i + indexEnd) % monthNames.length;
+  //   	months.push(monthNames[pointer])
+  //   	}  
 		////start at the ending index and work until the beginning index, remove those indecies!
 
 
-		
+		////ok, maybe we should first create an array of months that are NOT in the range
 
-	}
+		///then, we will filter out those months in the monthNames array
+
+
+		
 
 }
 
