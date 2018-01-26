@@ -253,22 +253,16 @@ const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'Jul
 function monthsInterval(dateStart, dateEnd) {
 	let indexStart = dateStart.getMonth()
 	let indexEnd = dateEnd.getMonth()
+	let indexStartYear = dateStart.getYear()
+	let indexEndYear = dateStart.getYear()
 	let months = []
 
-	// if(indexEnd == indexStart) {
-	// 	indexEnd = 12
-	// } else {
-	// 	indexEnd = dateEnd.getMonth()
-	// }
-
-	// let months = monthNames.slice(indexStart, indexEnd + 1)
-
-	// return months
+	if (indexStartYear > indexEndYear)
 
 
-
-	for(let i = indexStart; i < monthNames.length; i++) {
-		months.push({i})
+	for(let i = 0; i < monthNames.length; i++) {
+    	let pointer = (i + indexStart) % monthNames.length;
+    	months.push(monthNames[pointer])   
 	}
 
 	return months
@@ -280,6 +274,18 @@ var january2018 = new Date(2018, 0, 1);
 
 
 console.log(monthsInterval(december2017, january2018))
+
+
+
+// var myArry = ["cool", "gnarly", "rad", "farout", "awesome"];
+// var offset = 3;
+// var newArray = []
+// for( var i=0; i < myArry.length; i++) {
+//     var pointer = (i + offset) % myArry.length;
+//     newArray.push(myArry[pointer])   
+// }
+
+// console.log(newArray)
 
 
 
