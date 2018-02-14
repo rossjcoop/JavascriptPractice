@@ -253,35 +253,45 @@ const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'Jul
 function monthsInterval(dateStart, dateEnd) {
 	let indexStart = dateStart.getMonth()
 	let indexEnd = dateEnd.getMonth()
-	let months = monthNames.slice(indexEnd, indexStart)
+	let omittedMonths = []
+	let months =[]
 
-	return months
+	if (indexStart > indexEnd) {
+		console.log("Starting date must be earlier than later date")
+	}
+
+	else {
+
+		indexEnd += 1
+	////ok, maybe we should first create an array of months that are NOT in the range
+	///then, we will filter out those months in the monthNames array
+
+		for(let i = 0; i < indexStart; i++) {
+    		omittedMonths.push(monthNames[i])
+    	}
+
+		for(let i = indexEnd; i < 12; i++) {
+    		omittedMonths.push(monthNames[i]) 	
+    	}    	
+
+    ///So, now I have my array of months that are NOT included in the date range, I need to filter out those items from monthNames and return it.
 
 
+    	
+
+    }
+	
 
 
-		// for(let i = 0; i < monthNames.length; i++) {
-  //   	let pointer = (i + indexEnd) % monthNames.length;
-  //   	months.push(monthNames[pointer])
-  //   	}  
-		////start at the ending index and work until the beginning index, remove those indecies!
-
-
-		////ok, maybe we should first create an array of months that are NOT in the range
-
-		///then, we will filter out those months in the monthNames array
-
-
-		
 
 }
 
 
-var december2017 = new Date(2017, 11, 1);
-var january2018 = new Date(2018, 0, 1);
+var april2017 = new Date(2017, 3, 1);
+var june2017 = new Date(2017, 5, 1);
 
 
-console.log(monthsInterval(december2017, january2018))
+console.log(monthsInterval(april2017, june2017))
 
 
 
