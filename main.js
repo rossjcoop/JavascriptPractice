@@ -254,17 +254,25 @@ function monthsInterval(dateStart, dateEnd) {
 	let indexStart = dateStart.getMonth()
 	let indexEnd = dateEnd.getMonth()
 	let omittedMonths = []
-	let months =[]
+
+
+	////ok, I really need to reformat the dates in case they are reversed, and also if the year is different before we can proceed. After that, we can follow the logic of removing the unwanted months. In essence, there can be a conditional if it was over a year, just return all the months.
 
 	if (indexStart > indexEnd) {
-		console.log("Starting date must be earlier than later date")
+		let newIndexStart = indexEnd
+		console.log(newIndexStart)
+		let newIndexEnd = indexStart
+
+		indexStart = newIndexStart
+		indexEnd = newIndexEnd
+
 	}
 
 	else {
 
-		indexEnd += 1
-	////ok, maybe we should first create an array of months that are NOT in the range
-	///then, we will filter out those months in the monthNames array
+		indexEnd += 1 //Need to move up an index so it doesn't start the omittedMonths array with the inclusive months.
+
+	////ok, maybe we should first create an array of months that are NOT in the range then, we will filter out those months in the monthNames array.
 
 		for(let i = 0; i < indexStart; i++) {
     		omittedMonths.push(monthNames[i])
@@ -276,8 +284,12 @@ function monthsInterval(dateStart, dateEnd) {
 
     ///So, now I have my array of months that are NOT included in the date range, I need to filter out those items from monthNames and return it.
 
+    let months = monthNames.filter(month => !omittedMonths.includes(month));
 
-    	
+
+    return months
+
+
 
     }
 	
@@ -291,7 +303,7 @@ var april2017 = new Date(2017, 3, 1);
 var june2017 = new Date(2017, 5, 1);
 
 
-console.log(monthsInterval(april2017, june2017))
+console.log(monthsInterval(june2017, april2017))
 
 
 
