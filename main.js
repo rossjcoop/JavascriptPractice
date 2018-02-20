@@ -258,15 +258,25 @@ function monthsInterval(dateStart, dateEnd) {
 
 	////ok, I really need to reformat the dates in case they are reversed, and also if the year is different before we can proceed. After that, we can follow the logic of removing the unwanted months. In essence, there can be a conditional if it was over a year, just return all the months.
 
-	if (indexStart > indexEnd) {
-		let newIndexStart = indexEnd
-		console.log(newIndexStart)
-		let newIndexEnd = indexStart
 
-		indexStart = newIndexStart
-		indexEnd = newIndexEnd
+	///actually, lets reverse the dates from the getgo. The new method works to swap values in the params, [a, b] = [b, a]. Cool.
 
+
+	if (dateStart > dateEnd) {
+		[dateStart, dateEnd] = [dateEnd, dateStart];
+		console.log("dateStart:", dateStart, "dateEnd:", dateEnd)
 	}
+
+
+	// if (indexStart > indexEnd) {
+	// 	let newIndexStart = indexEnd
+	// 	console.log(newIndexStart)
+	// 	let newIndexEnd = indexStart
+
+	// 	indexStart = newIndexStart
+	// 	indexEnd = newIndexEnd
+
+	// }
 
 	else {
 
