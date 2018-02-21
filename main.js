@@ -265,7 +265,9 @@ function monthsInterval(dateStart, dateEnd) {
 
 	
 	////////This will check if date is over a year apart, in turn, just return all the months.
+	//A
 	if ((end - start) >= 31536000000) {
+		console.log("A hit")
 		return monthNames
 	}
 
@@ -275,17 +277,21 @@ function monthsInterval(dateStart, dateEnd) {
 		let indexEnd = dateEnd.getMonth()
 
 		///this works beautifully!////////////////////////////
+		//B
 		if (indexStart <= indexEnd) {
-			monthNames.slice(indexStart, (indexEnd + 1))
-			return monthNames
+			let months = monthNames.slice(indexStart, (indexEnd + 1))
+			console.log("B hit")
+			return months
+			
 		}
 
 		/////just have to figure out when the indecies are offset
-
+		//C
 		else {
 			let omit = (indexStart - (indexEnd + 1))
 			console.log("Splice count:", omit)
 			monthNames.splice((indexEnd + 1), omit)
+			console.log("C hit")
 			return monthNames
 		};
 	};
@@ -295,8 +301,8 @@ function monthsInterval(dateStart, dateEnd) {
 
 
 
-var june2017 = new Date(2018, 4, 1);
-var june2018 = new Date(2019, 2, 1);
+var june2017 = new Date(2018, 0, 1);
+var june2018 = new Date(2018, 0, 1);
 
 
 console.log(monthsInterval(june2017, june2018))
