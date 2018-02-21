@@ -274,23 +274,29 @@ function monthsInterval(dateStart, dateEnd) {
 		let indexStart = dateStart.getMonth()
 		let indexEnd = dateEnd.getMonth()
 
+		///this works beautifully!////////////////////////////
 		if (indexStart <= indexEnd) {
-			let months = monthNames.slice(indexStart, indexEnd)
-			return months
+			monthNames.slice(indexStart, (indexEnd + 1))
+			return monthNames
 		}
 
+		/////just have to figure out when the indecies are offset
+
 		else {
-			let months = monthNames.slice(indexEnd, indexStart)
-			return months
+			let omit = (indexStart - (indexEnd + 1))
+			console.log("Splice count:", omit)
+			monthNames.splice((indexEnd + 1), omit)
+			return monthNames
 		};
-
-
 	};
 };
 
 
-var june2017 = new Date(2018, 5, 1);
-var june2018 = new Date(2019, 3, 1);
+
+
+
+var june2017 = new Date(2018, 4, 1);
+var june2018 = new Date(2019, 2, 1);
 
 
 console.log(monthsInterval(june2017, june2018))
