@@ -251,34 +251,35 @@ console.log(getAbsSum([1, -2, 3, 4]))
 const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
 function monthsInterval(dateStart, dateEnd) {
-	let indexStart = dateStart.getMonth()
-	let indexEnd = dateEnd.getMonth()
-	let omittedMonths = []
-
+	const start = Date.parse(dateStart)
+	const end = Date.parse(dateEnd)
 
 	////ok, I really need to reformat the dates in case they are reversed, and also if the year is different before we can proceed. After that, we can follow the logic of removing the unwanted months. In essence, there can be a conditional if it was over a year, just return all the months.
 
 
 	///actually, lets reverse the dates from the getgo. The new method works to swap values in the params, [a, b] = [b, a]. Cool.
 
-
-	if (dateStart > dateEnd) {
+	if (start > end) {
 		[dateStart, dateEnd] = [dateEnd, dateStart];
-		console.log("dateStart:", dateStart, "dateEnd:", dateEnd)
 	}
 
 
-	// if (indexStart > indexEnd) {
-	// 	let newIndexStart = indexEnd
-	// 	console.log(newIndexStart)
-	// 	let newIndexEnd = indexStart
+	////////This will check if date is over a year apart, in turn, just return all the months.
+	if ((end - start) >= 31536000000) {
+		return monthNames
+	}
 
-	// 	indexStart = newIndexStart
-	// 	indexEnd = newIndexEnd
+	else
 
-	// }
 
-	else {
+	const indexStart = dateStart.getMonth()
+	const indexStartYear = dateStart.getYear()
+	const indexEnd = dateEnd.getMonth()
+	const indexEndYear = dateEnd.getYear()
+	const omittedMonths = []
+
+
+
 
 		indexEnd += 1 //Need to move up an index so it doesn't start the omittedMonths array with the inclusive months.
 
@@ -298,22 +299,16 @@ function monthsInterval(dateStart, dateEnd) {
 
 
     return months
-
-
-
-    }
 	
-
-
 
 }
 
 
-var april2017 = new Date(2017, 3, 1);
 var june2017 = new Date(2017, 5, 1);
+var june2018 = new Date(2018, 5, 1);
 
 
-console.log(monthsInterval(june2017, april2017))
+console.log(monthsInterval(june2017, june2018))
 
 
 
