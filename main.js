@@ -264,10 +264,8 @@ function monthsInterval(dateStart, dateEnd) {
 	const end = Date.parse(dateEnd)
 
 	
-	////////This will check if date is over a year apart, in turn, just return all the months.
-	//A
-	if ((end - start) >= 31536000000) {
-		console.log("A hit")
+	
+	if ((end - start) >= 31536000000) { //if over a year between dates, just return entire array
 		return monthNames
 	}
 
@@ -276,36 +274,24 @@ function monthsInterval(dateStart, dateEnd) {
 		let indexStart = dateStart.getMonth()
 		let indexEnd = dateEnd.getMonth()
 
-		///this works beautifully!////////////////////////////
-		//B
 		if (indexStart <= indexEnd) {
 			let months = monthNames.slice(indexStart, (indexEnd + 1))
-			console.log("B hit")
-			return months
-			
+			return months			
 		}
 
-		/////just have to figure out when the indecies are offset
-		//C
 		else {
-			let omit = (indexStart - (indexEnd + 1))
-			console.log("Splice count:", omit)
-			monthNames.splice((indexEnd + 1), omit)
-			console.log("C hit")
-			return monthNames
+			let months = monthNames.slice(0, (indexEnd + 1)).concat(monthNames.slice(indexStart, 12))
+			return months
 		};
 	};
 };
 
 
+var x = new Date(2018, 0, 1);
+var y = new Date(2017, 11, 1);
 
 
-
-var june2017 = new Date(2018, 0, 1);
-var june2018 = new Date(2018, 0, 1);
-
-
-console.log(monthsInterval(june2017, june2018))
+console.log(monthsInterval(x, y))
 
 
 
@@ -348,4 +334,9 @@ console.log(monthsInterval(june2017, june2018))
 		// let months = monthNames.filter(month => !omittedMonths.includes(month));
 
 
+		//Tried Splice, then realized it was modifying the original array. Shit.
+
+		// let omit = (indexStart - (indexEnd + 1))
+		// console.log("Splice count:", omit)
+		// monthNames.splice((indexEnd + 1), omit)
 
