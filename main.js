@@ -252,17 +252,12 @@ const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'Jul
 
 function monthsInterval(dateStart, dateEnd) {
 
-	////ok, I really need to reformat the dates in case they are reversed, and also if the year is different before we can proceed. After that, we can follow the logic of removing the unwanted months. In essence, there can be a conditional if it was over a year, just return all the months.
-
-	///actually, lets reverse the dates from the getgo. The new method works to swap values in the params, [a, b] = [b, a]. Cool.
-
-	if (dateStart > dateEnd) {
+	if (dateStart > dateEnd) { //if starting date comes after ending date, reverse them.
 		[dateStart, dateEnd] = [dateEnd, dateStart];
 	};
 
 	const start = Date.parse(dateStart)
 	const end = Date.parse(dateEnd)
-
 	
 	
 	if ((end - start) >= 31536000000) { //if over a year between dates, just return entire array
@@ -274,12 +269,12 @@ function monthsInterval(dateStart, dateEnd) {
 		let indexStart = dateStart.getMonth()
 		let indexEnd = dateEnd.getMonth()
 
-		if (indexStart <= indexEnd) {
+		if (indexStart <= indexEnd) { //inner slice
 			let months = monthNames.slice(indexStart, (indexEnd + 1))
 			return months			
 		}
 
-		else {
+		else { //outer slice
 			let months = monthNames.slice(0, (indexEnd + 1)).concat(monthNames.slice(indexStart, 12))
 			return months
 		};
@@ -296,7 +291,7 @@ console.log(monthsInterval(x, y))
 
 
 
-//////OLD CODE FROM ABOVE PROBLEM/////////////////////////////////////////////////
+//////LEFT OVER OLD CODE FROM ABOVE PROBLEM/////////////////////////////////////////////////
 
 
 	///code to start at a different index and loop through entire array
