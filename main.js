@@ -251,81 +251,89 @@ console.log(getAbsSum([1, -2, 3, 4]))
 const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
 function monthsInterval(dateStart, dateEnd) {
-	const start = Date.parse(dateStart)
-	const end = Date.parse(dateEnd)
 
 	////ok, I really need to reformat the dates in case they are reversed, and also if the year is different before we can proceed. After that, we can follow the logic of removing the unwanted months. In essence, there can be a conditional if it was over a year, just return all the months.
 
-
 	///actually, lets reverse the dates from the getgo. The new method works to swap values in the params, [a, b] = [b, a]. Cool.
 
-	if (start > end) {
+	if (dateStart > dateEnd) {
 		[dateStart, dateEnd] = [dateEnd, dateStart];
-	}
+	};
 
+	const start = Date.parse(dateStart)
+	const end = Date.parse(dateEnd)
 
+	
 	////////This will check if date is over a year apart, in turn, just return all the months.
 	if ((end - start) >= 31536000000) {
 		return monthNames
 	}
 
-	else
+	else {
+
+		let indexStart = dateStart.getMonth()
+		let indexEnd = dateEnd.getMonth()
+
+		if (indexStart <= indexEnd) {
+			let months = monthNames.slice(indexStart, indexEnd)
+			return months
+		}
+
+		else {
+			let months = monthNames.slice(indexEnd, indexStart)
+			return months
+		};
 
 
-	const indexStart = dateStart.getMonth()
-	const indexStartYear = dateStart.getYear()
-	const indexEnd = dateEnd.getMonth()
-	const indexEndYear = dateEnd.getYear()
-	const omittedMonths = []
+	};
+};
 
 
-
-
-		indexEnd += 1 //Need to move up an index so it doesn't start the omittedMonths array with the inclusive months.
-
-	////ok, maybe we should first create an array of months that are NOT in the range then, we will filter out those months in the monthNames array.
-
-		for(let i = 0; i < indexStart; i++) {
-    		omittedMonths.push(monthNames[i])
-    	}
-
-		for(let i = indexEnd; i < 12; i++) {
-    		omittedMonths.push(monthNames[i]) 	
-    	}    	
-
-    ///So, now I have my array of months that are NOT included in the date range, I need to filter out those items from monthNames and return it.
-
-    let months = monthNames.filter(month => !omittedMonths.includes(month));
-
-
-    return months
-	
-
-}
-
-
-var june2017 = new Date(2017, 5, 1);
-var june2018 = new Date(2018, 5, 1);
+var june2017 = new Date(2018, 5, 1);
+var june2018 = new Date(2019, 3, 1);
 
 
 console.log(monthsInterval(june2017, june2018))
 
 
 
-// var myArry = ["cool", "gnarly", "rad", "farout", "awesome"];
-// var offset = 3;
-// var newArray = []
-// for( var i=0; i < myArry.length; i++) {
-//     var pointer = (i + offset) % myArry.length;
-//     newArray.push(myArry[pointer])   
-// }
 
-// console.log(newArray)
+//////OLD CODE FROM ABOVE PROBLEM/////////////////////////////////////////////////
 
 
+	///code to start at a different index and loop through entire array
 
 
+		//version taken from Stack Overflow:
 
+		// var myArry = ["cool", "gnarly", "rad", "farout", "awesome"];
+		// var offset = 3;
+		// var newArray = []
+		// for( var i=0; i < myArry.length; i++) {
+		//     var pointer = (i + offset) % myArry.length;
+		//     newArray.push(myArry[pointer])   
+		// }
+
+		///version for above:
+
+		// for(let i = 0; i < monthNames.length; i++) {
+		//     let pointer = (i + indexStart) % myArry.length;
+		//     newArray.push(myArry[pointer])   
+		// }
+
+		//Idea I had to make loops from one index to another:
+		
+		//for(let i = 0; i < indexStart; i++) {
+  		//omittedMonths.push(monthNames[i])
+  		//}
+
+		//for(let i = indexEnd; i < 12; i++) {
+  		//omittedMonths.push(monthNames[i]) 	
+  		//} 
+
+
+		//code to filter an array from another array
+		// let months = monthNames.filter(month => !omittedMonths.includes(month));
 
 
 
