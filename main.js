@@ -367,8 +367,21 @@ console.log(AlphabetSoup("javascript"))
 function findLargestNum(arr) {
   return Math.max.apply(Math, arr);
 }
+//even simplier:
+// return Math.max(...arr);
 
 console.log(findLargestNum([1, 6, 456, 8]))
+
+
+//Create a function that takes two strings and returns true if the first argument ends with the 2nd argument; otherewise return false .
+
+//I guess the tests were all in lowercase, but just in case, lets make the params lowercase. -RC
+
+function checkEnding(str1, str2) {
+	return str1.toLowerCase().endsWith(str2.toLowerCase()) 
+}
+
+console.log(checkEnding("basic", "Sic"))
 
 
 
