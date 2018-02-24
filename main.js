@@ -341,6 +341,11 @@ console.log(monthsInterval(x, y))
 
 
 function nameShuffle(str) {
+
+	let swap = str.split(' ').reverse()
+	return swap
   
 }
+
+console.log(nameShuffle("Donald Trump"))
 
