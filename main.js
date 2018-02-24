@@ -254,7 +254,7 @@ function monthsInterval(dateStart, dateEnd) {
 
 	if (dateStart > dateEnd) { //if starting date comes after ending date, reverse them.
 		[dateStart, dateEnd] = [dateEnd, dateStart];
-	};
+	}
 
 	const start = Date.parse(dateStart)
 	const end = Date.parse(dateEnd)
@@ -277,8 +277,8 @@ function monthsInterval(dateStart, dateEnd) {
 		else { //outer slice
 			let months = monthNames.slice(0, (indexEnd + 1)).concat(monthNames.slice(indexStart, 12))
 			return months
-		};
-	};
+		}
+	}
 };
 
 
@@ -334,4 +334,13 @@ console.log(monthsInterval(x, y))
 		// let omit = (indexStart - (indexEnd + 1))
 		// console.log("Splice count:", omit)
 		// monthNames.splice((indexEnd + 1), omit)
+
+
+
+//Create a function that accepts a string (of a persons first and last name) and returns a string with the first and last name swapped.
+
+
+function nameShuffle(str) {
+  
+}
 
