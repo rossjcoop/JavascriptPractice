@@ -360,3 +360,16 @@ function AlphabetSoup(str) {
 
 console.log(AlphabetSoup("javascript"))
 
+
+
+//Create a function that takes an array of numbers. Return the largest number in the array.
+
+function findLargestNum(arr) {
+  return Math.max.apply(Math, arr);
+}
+
+console.log(findLargestNum([1, 6, 456, 8]))
+
+
+
+
