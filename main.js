@@ -349,3 +349,14 @@ function nameShuffle(str) {
 
 console.log(nameShuffle("Donald Trump"))
 
+
+//Create a function that takes a string and returns a string with its letters in alphabetical order.
+
+function AlphabetSoup(str) {
+
+	let atoZ = str.split('').sort().join('')
+	return atoZ 
+}
+
+console.log(AlphabetSoup("javascript"))
+
