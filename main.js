@@ -342,7 +342,7 @@ console.log(monthsInterval(x, y))
 
 function nameShuffle(str) {
 
-	let swap = str.split(' ').reverse()
+	let swap = str.split(' ').reverse().join(' ')
 	return swap
   
 }
