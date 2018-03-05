@@ -384,5 +384,15 @@ function checkEnding(str1, str2) {
 console.log(checkEnding("basic", "Sic"))
 
 
+//Create a function that takes an array of numbers and returns the smallest number in the set.
+
+function findSmallestNum(arr) {
+	return Math.min(...arr);
+  
+}
+
+console.log(findSmallestNum([3, 5, 7, 8]))
+
+
 
 
