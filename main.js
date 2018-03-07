@@ -397,7 +397,7 @@ console.log(findSmallestNum([3, 5, 7, 8]))
 //Create a function that takes an array of strings. Return all words in the array that are exactly four letters.
 
 function find4Array(arr) {
-	return arr.filter(item => item.length = 4)
+	return arr.filter(item => item.length == 4)
 }
 
 console.log(find4Array(["four", "five", "six"]))
