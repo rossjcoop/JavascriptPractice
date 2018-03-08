@@ -405,3 +405,20 @@ console.log(find4Array(["four", "five", "six"]))
 
 
 
+//Create a function that returns all values in an array that aren't' odd.
+
+function noOdds(arr) {
+  return arr.filter(num => num % 2 === 0)
+}
+
+console.log(noOdds([2, 3, 4, 5]))
+
+//Create a function that takes a string as its argument and returns the string in reversed order.
+
+function reverse(str) {
+  return str.split('').reverse().join('')
+}
+
+
+console.log(reverse("Hello world!"))
+
