@@ -448,3 +448,21 @@ function minMax(arr) {
 console.log(minMax([1, 5, 7, 9]))
 
 
+//Create a function that takes a number as an argument. Add up all the numbers from 1 to the number you passed to the function.  For example, if the input is 4 then your function should return 10 because 1 + 2 + 3 + 4 = 10.
+
+function addUp(num) {
+	
+	//return (num * (num + 1))/2; ///better way
+	var n = 0;
+	var x = 0;
+
+	while (n < num) {
+  		n++;
+  		x += n;
+	}
+
+	return x
+  
+}
+
+console.log(addUp(600))
