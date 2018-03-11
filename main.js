@@ -438,3 +438,13 @@ function isEvenOrOdd(num) {
 console.log(isEvenOrOdd(8))
 
 
+
+//Create a function that takes an array of numbers and return both the minimum and maximum numbers, in that order.
+
+function minMax(arr) {
+	return [Math.min(...arr), Math.max(...arr)]
+}
+
+console.log(minMax([1, 5, 7, 9]))
+
+
