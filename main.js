@@ -466,3 +466,12 @@ function addUp(num) {
 }
 
 console.log(addUp(600))
+
+//Create a function that takes an array of non-negative numbers and strings and returns a new array without the strings.
+
+
+function filterArray(arr) {
+  return arr.filter(item => typeof item === "number")
+}
+
+console.log(filterArray([1, 2, 5, "butter", 8, "cheese"]))
