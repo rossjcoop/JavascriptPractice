@@ -496,3 +496,16 @@ function silenceTrump(str) {
 }
 
 console.log(silenceTrump("Make America Great Again"))
+
+
+//Given a number n, write a function that returns PI to n decimal places.
+
+function myPi(n) {
+	let factor = Math.pow(10, n)
+	return Math.round(Math.PI * factor) / factor
+
+
+	//return Number(Math.PI.toFixed(n)); //better solution
+}
+
+console.log(myPi(9))
