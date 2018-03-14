@@ -484,3 +484,12 @@ function countWords(str){
 }
 
 console.log(countWords("Where in the world is Carmen San Diego?"))
+
+
+
+///Create a function that takes a string as an argument. Return a new string with all vowels removed.
+
+function silenceTrump(str) {
+	return str.replace(/[a || e || i || o || u]/g, '')
+
+console.log(silenceTrump("Make America Great Again"))
