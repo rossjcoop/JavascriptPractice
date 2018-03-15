@@ -517,8 +517,7 @@ function minMaxLengthAverage(arr) {
 	let min = Math.min(...arr)
 	let max = Math.max(...arr)
 	let length = arr.length
-	let avg = (arr.reduce((accumulator, currentValue) => accumulator + currentValue, 0)) / arr.length
-
+	let avg = arr.reduce((a, b) => a + b, 0) / arr.length
 
 	return [min, max, length, avg]
 }
