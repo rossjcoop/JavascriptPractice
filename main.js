@@ -509,3 +509,18 @@ function myPi(n) {
 }
 
 console.log(myPi(9))
+
+
+//Create a function that takes an array of numbers and returns the following statistics: Minimum Value, Maximum Value, Sequence Length, Average Value
+
+function minMaxLengthAverage(arr) {
+	let min = Math.min(...arr)
+	let max = Math.max(...arr)
+	let length = arr.length
+	let avg = (arr.reduce((accumulator, currentValue) => accumulator + currentValue, 0)) / arr.length
+
+
+	return [min, max, length, avg]
+}
+
+console.log(minMaxLengthAverage([5, 1899, 4443, 2230549, 9, 29]))
