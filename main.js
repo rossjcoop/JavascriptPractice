@@ -533,4 +533,22 @@ function countVowels(str) {
 
 
 //return str.split('').filter(x => 'aeiouAEIOU'.includes(x)).length;//another cool way using filter
+
+
 console.log(countVowels("Where in the world is Carmen San Diego?"))
+
+
+
+//Create a function that takes an array of numbers and returns a new array, sorted in ascending order (smallest to biggest).
+
+function sortNumsAscending(arr) {
+//   if(arr == null) {
+//     return []
+//   } else {
+//   return arr.sort((a, b) => a - b)
+//  }
+// }
+
+return arr ? arr.sort((a, b) => a - b) : [] //This way is cool
+}
+console.log(sortNumsAscending(undefined))
