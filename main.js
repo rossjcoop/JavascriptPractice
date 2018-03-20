@@ -531,4 +531,6 @@ function countVowels(str) {
   return str.match(/[aeiou]/ig).length
 }
 
+
+//return str.split('').filter(x => 'aeiouAEIOU'.includes(x)).length;//another cool way using filter
 console.log(countVowels("Where in the world is Carmen San Diego?"))
