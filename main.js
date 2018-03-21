@@ -552,3 +552,15 @@ function sortNumsAscending(arr) {
 return arr ? arr.sort((a, b) => a - b) : [] //This way is cool
 }
 console.log(sortNumsAscending(undefined))
+
+
+
+
+//Create a function that takes an array of arrays with numbers. Return a new (single) array with the largest numbers of each.
+
+
+function findLargestNums(arr) {
+  return arr.map(a => Math.max(...a))
+}
+
+console.log(findLargestNums([[1, 5, 34], [456, 2, 1004], [2458, 456, 2, 586]]))
