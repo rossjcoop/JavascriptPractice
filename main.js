@@ -570,8 +570,12 @@ console.log(findLargestNums([[1, 5, 34], [456, 2, 1004], [2458, 456, 2, 586]]))
 //Create a function that takes a string, checks if it has the same number of 'x's and 'o's and returns either true or false.
 
 function XO(str) {
-  return str.toLowerCase().split('').filter(i => i.match(/[xo]/))
+ // let x = str.toLowerCase().split('').filter(i => i.match(/[x]/)).forEach(i => if(i=x)
+
+ str.match(/[xo]/ig).forEach(i => let a = 0 let b = 0 i === x ? a++ : b++)
 }
 
-
 console.log(XO("The boxes of foxes ate oxes"))
+
+
+
