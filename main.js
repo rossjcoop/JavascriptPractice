@@ -571,8 +571,11 @@ console.log(findLargestNums([[1, 5, 34], [456, 2, 1004], [2458, 456, 2, 586]]))
 
 function XO(str) {
  // let x = str.toLowerCase().split('').filter(i => i.match(/[x]/)).forEach(i => if(i=x)
+let a = 0
+let b = 0
+str.match(/[xo]/ig).forEach(i => i === "x" ? a++ : b++)
 
- str.match(/[xo]/ig).forEach(i => let a = 0 let b = 0 i === x ? a++ : b++)
+return [a, b]
 }
 
 console.log(XO("The boxes of foxes ate oxes"))
