@@ -564,3 +564,14 @@ function findLargestNums(arr) {
 }
 
 console.log(findLargestNums([[1, 5, 34], [456, 2, 1004], [2458, 456, 2, 586]]))
+
+
+
+//Create a function that takes a string, checks if it has the same number of 'x's and 'o's and returns either true or false.
+
+function XO(str) {
+  return str.toLowerCase().split('').filter(i => i.match(/[xo]/))
+}
+
+
+console.log(XO("The boxes of foxes ate oxes"))
