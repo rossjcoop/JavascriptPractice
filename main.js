@@ -596,10 +596,11 @@ console.log(XO("The boxes of foxes ate Oxes"))
 
 
 function highLow(str) {
-	return (Math.max(...str.split(' '))) + " " + (Math.min(...str.split(' ')))
-	// && str.split(' ').map(i => Math.min(...i))
-  
+	return (Math.max(...str.split(' '))) + " " + (Math.min(...str.split(' ')))  
 }
+
+///var nums = str.split(' ');
+// return `${Math.max(...nums)} ${Math.min(...nums)}`; //with the template literals, works nicely.
 
 
 console.log(highLow("15 256 56 34 1"))
