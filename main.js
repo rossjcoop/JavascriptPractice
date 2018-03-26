@@ -576,13 +576,13 @@ function XO(str) {
  
 	arr ? arr.forEach(i => i === "x" ? x++ : o++) : arr == null //still proud of this. haha
 
-	if(a == b) {
+	if(x == o) {
 		return true
 	} else {
 		return false
 	}
 
-	//top solution, so simple
+	//top solution
 
 	//let x = str.toLowerCase().split('').filter(x => x === 'x').length;
   	//let o = str.toLowerCase().split('').filter(x => x === 'o').length;
@@ -592,4 +592,14 @@ function XO(str) {
 console.log(XO("The boxes of foxes ate Oxes"))
 
 
+//Create a function that accepts a string of space separated numbers and returns the highest and lowest number (as a string).
 
+
+function highLow(str) {
+	return (Math.max(...str.split(' '))) + " " + (Math.min(...str.split(' ')))
+	// && str.split(' ').map(i => Math.min(...i))
+  
+}
+
+
+console.log(highLow("15 256 56 34 1"))
