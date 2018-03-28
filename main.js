@@ -632,9 +632,19 @@ console.log(timeForMilkAndCookies(new Date( 2013, 11, 24 )))
 //Create a function that takes a string and returns a string in which each character is repeated once.
 
 function doubleChar(str) {
-	return str.split('').map(i => (i+i)).join('')
-  
+	return str.split('').map(i => (i+i)).join('') 
 }
 
 console.log(doubleChar("Hello World"))
+
+//Create a function that takes an array of names and returns an array with the first letter capitalized.
+
+
+function capMe(arr) {
+	return arr.map(i => i.substr(0, 1).toUpperCase() + i.substr(1, i.length).toLowerCase())
+}
+
+console.log(capMe(["Barry", "john", "ROSS"]))
+
+
 
