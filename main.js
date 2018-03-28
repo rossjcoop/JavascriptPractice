@@ -615,7 +615,7 @@ function timeForMilkAndCookies(date) {
 	let month = date.getMonth()
 	let day = date.getDay()
 
-	if(month = 11 && day = 24) {
+	if(month == 11 && day == 24) {
 		return true
 	} else {
 		return false
@@ -625,4 +625,16 @@ function timeForMilkAndCookies(date) {
 //return date.getMonth() === 11 && date.getDate() === 24; so fucking simple. Damn it. It will either be true or false. Hot beans.
 
 console.log(timeForMilkAndCookies(new Date( 2013, 11, 24 )))
+
+
+
+
+//Create a function that takes a string and returns a string in which each character is repeated once.
+
+function doubleChar(str) {
+	return str.split('').map(i => (i+i)).join('')
+  
+}
+
+console.log(doubleChar("Hello World"))
 
