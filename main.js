@@ -648,3 +648,23 @@ console.log(capMe(["Barry", "john", "ROSS"]))
 
 
 
+//Write a function that takes four string arguments. You will be comparing the first string to the three next strings. Verify if the first string starts with the second string, includes the third string, and ends with the fourth string. If the first string passes all checks, return the string "My head, body, and tail.", otherwise, return "Incomplete.".
+
+
+
+function verifySubstrs(mainStr, head, body, tail) {
+	let compare = head + " " + body + " " + tail
+	console.log(compare)
+
+	if(mainStr === compare) {
+		return "My head, body, and tail."
+	} else {
+		return "Incomplete"
+	}
+  
+}
+
+console.log(verifySubstrs("Hello my world", "Hello", "my", "world"))
+
+
+
