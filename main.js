@@ -672,5 +672,11 @@ function addition(a, b) {
 	//const addition = (a, b) => a + b; 
 }
 
+//Create a function that takes an array of numbers and returns the mean average (fixed to two decimal places).
+
+function mean(arr) {
+	return Number((arr.reduce((a, b) => a + b, 0) / arr.length).toFixed(2)) 
+}
+
 
 
