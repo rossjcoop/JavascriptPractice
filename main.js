@@ -667,7 +667,9 @@ console.log(verifySubstrs("Hello my world", "Hello", "y", "world"))
 //Create a function that takes two numbers as arguments and return their sum.
 
 function addition(a, b) {
-	return a + b 
+	return a + b
+
+	//const addition = (a, b) => a + b; 
 }
 
 
