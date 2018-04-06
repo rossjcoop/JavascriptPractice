@@ -658,8 +658,17 @@ function verifySubstrs(mainStr, head, body, tail) {
 	} else {
 		return "Incomplete."
 	}
+
+	//return mainStr.startsWith(head) && mainStr.includes(body) && mainStr.endsWith(tail) ? "My head, body, and tail." : "Incomplete.";//better solution by smarter people than me.
 }
 console.log(verifySubstrs("Hello my world", "Hello", "y", "world"))
+
+
+//Create a function that takes two numbers as arguments and return their sum.
+
+function addition(a, b) {
+	return a + b 
+}
 
 
 
