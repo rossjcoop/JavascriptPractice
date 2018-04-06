@@ -653,18 +653,13 @@ console.log(capMe(["Barry", "john", "ROSS"]))
 
 
 function verifySubstrs(mainStr, head, body, tail) {
-	let compare = head + " " + body + " " + tail
-	console.log(compare)
-
-	if(mainStr === compare) {
+	if(mainStr.startsWith(head) && mainStr.includes(body) && mainStr.endsWith(tail)) {
 		return "My head, body, and tail."
 	} else {
-		return "Incomplete"
+		return "Incomplete."
 	}
-  
 }
-
-console.log(verifySubstrs("Hello my world", "Hello", "my", "world"))
+console.log(verifySubstrs("Hello my world", "Hello", "y", "world"))
 
 
 
