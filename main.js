@@ -679,4 +679,12 @@ function mean(arr) {
 }
 
 
+//Create a function that takes an array of items, removes all duplicate items and returns a new array in the same sequential order as the old array (minus duplicates).
+
+function removeDups(arr) {
+  
+}
+
+console.log(removeDups([1, "Ken", "Ken", "Ryu", 2, 2]))
+
 
