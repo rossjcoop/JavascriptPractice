@@ -698,9 +698,21 @@ console.log(removeDups([1, "Ken", "Ken", "Ryu", 2, 2]))
 
 
 function matrix(x, y, z) {
-	return [z] * x
+	let subArray = []
+	let count1 = 0
+	while(count1 <= y) {
+		count1 ++
+		subArray.push(z)
+	}
+	let returnArray = []
+	let count2 = 0
+	while(count2 <= x) {
+		count2 ++
+		returnArray.push(subArray)
+	}
+	return returnArray
 }
 
-console.log(matrix(2, 1, "Ross"))
+console.log(matrix(2, 5, "Ross"))
 
 
