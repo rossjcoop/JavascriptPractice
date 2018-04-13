@@ -700,13 +700,13 @@ console.log(removeDups([1, "Ken", "Ken", "Ryu", 2, 2]))
 function matrix(x, y, z) {
 	let subArray = []
 	let count1 = 0
-	while(count1 <= y) {
+	while(count1 = y) {
 		count1 ++
 		subArray.push(z)
 	}
 	let returnArray = []
 	let count2 = 0
-	while(count2 <= x) {
+	while(count2 = x) {
 		count2 ++
 		returnArray.push(subArray)
 	}
