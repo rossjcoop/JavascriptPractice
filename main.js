@@ -683,9 +683,24 @@ function mean(arr) {
 
 function removeDups(arr) {
 	// return arr.filter((v, i, a) => a.indexOf(v) === i) 
-	return [...new Set(arr)]
+	return [...new Set(arr)] //haha!
 }
 
 console.log(removeDups([1, "Ken", "Ken", "Ryu", 2, 2]))
+
+
+
+//Create a function that returns an array containing subarrays, each of a certain number of items, all set to either a string or an integer.
+
+//x = how many subarrays to return
+//z = the item in the array (either a string or number)
+//y = how many times the item occurs in the array
+
+
+function matrix(x, y, z) {
+	return [z] * x
+}
+
+console.log(matrix(2, 1, "Ross"))
 
 
