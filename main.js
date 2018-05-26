@@ -697,22 +697,75 @@ console.log(removeDups([1, "Ken", "Ken", "Ryu", 2, 2]))
 //y = how many times the item occurs in the array
 
 
-function matrix(x, y, z) {
-	let subArray = []
-	let count1 = 0
-	while(count1 = y) {
-		count1 ++
-		subArray.push(z)
-	}
-	let returnArray = []
-	let count2 = 0
-	while(count2 = x) {
-		count2 ++
-		returnArray.push(subArray)
-	}
-	return returnArray
+// function matrix(x, y, z) {
+// 	let subArray = []
+// 	let count1 = 0
+// 	while(count1 = y) {
+// 		count1 ++
+// 		subArray.push(z)
+// 	}
+// 	let returnArray = []
+// 	let count2 = 0
+// 	while(count2 = x) {
+// 		count2 ++
+// 		returnArray.push(subArray)
+// 	}
+// 	return returnArray
+// }
+
+// console.log(matrix(2, 5, "Ross"))
+
+
+///input 109 points
+//total games 82
+
+//Las Vegas Golden Knights have finished their inaugural season in the NHL with 109 points (5th in the league). Given that each win is worth 2 points (2 points if they win in regulation time or 1 point for tie plus 1 point for overtime/shootout win), a loss is 0 points and an end of regulation tie is 1 point, print out all combiniation of W-L-OT, ordered DESC by W, that the Golden Knights could have finished the season with 109 points.
+
+
+
+//I could, for 82 times, loop through
+
+
+
+///Using a random number between 1 and 3, generate a many combinations adding to columns
+function possibleOutcomes(input){
+
 }
 
-console.log(matrix(2, 5, "Ross"))
+let wins = 0
+let losses = 0
+let ties = 0
+let gameResults = []
+let totalGames = 82
+let totalPoints = (wins * 2) + losses + ties
 
 
+for (let i = 0; i < totalGames; i++) {
+	var gameResult = Math.floor(Math.random() * Math.floor(3))
+
+	if (gameResult == 0) {
+		losses += 1
+	} else if (gameResult == 1) {
+		ties += 1
+	} else {
+		wins += 1
+	}
+}
+
+
+
+
+console.log(wins)
+console.log(losses)
+console.log(ties)
+console.log(totalPoints)
+
+
+
+
+
+//Basically given a sum of 109, how many cominations of 3 numbers equals 109
+
+///wins array
+///losses array
+///ties array
