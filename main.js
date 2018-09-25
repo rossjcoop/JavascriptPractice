@@ -844,6 +844,35 @@ function Go(num) {
 
 
 
+//Create a function that takes a character and a string and returns the number of times that character is found in the given string.
+
+function charCount(myChar, str) {
+
+	return str.split('').filter(item => item == myChar).length
+	
+}
+
+
+//Create a function that reverses a boolean value and returns the string "boolean expected" if another variable type is given.
+
+
+// function reverse(bool) {
+
+// 	if(bool === true) {
+// 		return false
+// 	} else if(bool === false) {
+// 		return true
+// 	} else {
+// 		return "boolean expected"   ///my lame answer
+// }
+
+
+////////////////////////OR/////////////////////////////
+
+const reverse = bool => typeof bool === 'boolean' ? !bool : 'boolean expected'; ///LOVE LOVE this one.
+	
+}
+
 
 
 
