@@ -728,37 +728,37 @@ console.log(removeDups([1, "Ken", "Ken", "Ryu", 2, 2]))
 
 
 ///Using a random number between 1 and 3, generate a many combinations adding to columns
-function possibleOutcomes(input){
+// function possibleOutcomes(input){
 
-}
+// }
 
-let wins = 0
-let losses = 0
-let ties = 0
-let gameResults = []
-let totalGames = 82
-let totalPoints = (wins * 2) + losses + ties
-
-
-for (let i = 0; i < totalGames; i++) {
-	var gameResult = Math.floor(Math.random() * Math.floor(3))
-
-	if (gameResult == 0) {
-		losses += 1
-	} else if (gameResult == 1) {
-		ties += 1
-	} else {
-		wins += 1
-	}
-}
+// let wins = 0
+// let losses = 0
+// let ties = 0
+// let gameResults = []
+// let totalGames = 82
+// let totalPoints = (wins * 2) + losses + ties
 
 
+// for (let i = 0; i < totalGames; i++) {
+// 	var gameResult = Math.floor(Math.random() * Math.floor(3))
+
+// 	if (gameResult == 0) {
+// 		losses += 1
+// 	} else if (gameResult == 1) {
+// 		ties += 1
+// 	} else {
+// 		wins += 1
+// 	}
+// }
 
 
-console.log(wins)
-console.log(losses)
-console.log(ties)
-console.log(totalPoints)
+
+
+// console.log(wins)
+// console.log(losses)
+// console.log(ties)
+// console.log(totalPoints)
 
 
 
@@ -769,3 +769,34 @@ console.log(totalPoints)
 ///wins array
 ///losses array
 ///ties array
+
+
+// a + b + c = 109
+
+
+
+// Create a function that takes an array and a string as arguments and return the index of the string.
+
+function find_index(arr, str) {
+	return arr.indexOf(str)	
+}
+
+//OR
+
+console.log(find_index(['Ross', 'Cooper'], 'Ross'))
+
+
+function find_index2(arr, str){
+for (let i = 0; i < arr.length; i++) {
+		if (lst[i] === str) {
+			return i;
+		}
+	}
+}
+
+//OR
+
+// const find_index = (arr, str) => arr.findIndex(val => val === str); kinda like this too
+
+
+
