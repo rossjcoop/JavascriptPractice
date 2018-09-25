@@ -800,3 +800,53 @@ for (let i = 0; i < arr.length; i++) {
 
 
 
+//Create a function to multiply all values in an array by the amount of values in that array.
+
+
+function MultiplyByLength(arr) {
+
+	let newArr = []
+	for(let i = 0; i < arr.length; i++) {
+		newArr.push(arr[i] * arr.length)
+	}	
+
+	return newArr
+
+///////////////////////OR/////////////////////////
+
+	// return arr.map(item => item * arr.length)
+}
+
+console.log(MultiplyByLength([5, 7, 9, 3]))
+
+
+
+
+//Your task is to drive your car from 1 to 60 kilometers per hour by printing a pattern. A hyphen represents the speed of cars. One hyphen is counted as 1 kph.
+
+
+function Go(num) {
+	let arr = []
+	for(let i = 0; i < num; i++) {
+		arr.push("-")
+	}
+
+	return arr.join('')
+
+//////////////////////OR/////////////////////////
+
+	// return "-".repeat(num);
+
+//////////////////////OR /////////////////////////
+
+	// return Array(num).fill('-').join(''); ////This is what I was trying to do
+}
+
+
+
+
+
+
+
+
+
