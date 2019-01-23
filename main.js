@@ -908,3 +908,16 @@ function month_name(num) {
 
 console.log(month_name(1))
 
+
+
+//Create a function that takes a base number and an exponent number and returns the calculation.
+
+function calculateExponent(num, exp) {
+	return num ** exp
+	//or Math.pow(num, exp)
+}
+
+console.log(calculateExponent(3, 2))
+
+
+
