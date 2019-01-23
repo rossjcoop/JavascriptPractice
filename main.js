@@ -898,6 +898,13 @@ console.log(repeat("Ross", 5))
 
 
 
+//Create a function that takes a number (from 1 to 12) and return its corresponding month name as a string.
+
+function month_name(num) {
+	let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December",]
+	return months[--num]
+}
 
 
+console.log(month_name(1))
 
