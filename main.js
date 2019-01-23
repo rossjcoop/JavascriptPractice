@@ -865,14 +865,24 @@ function charCount(myChar, str) {
 // 	} else {
 // 		return "boolean expected"   ///my lame answer
 // }
+// }
 
 
 ////////////////////////OR/////////////////////////////
 
-const reverse = bool => typeof bool === 'boolean' ? !bool : 'boolean expected'; ///LOVE LOVE this one.
+const reversal = bool => typeof bool === 'boolean' ? !bool : 'boolean expected'; ///LOVE LOVE this one.
 	
+
+
+console.log(reversal(14))
+
+//Create a function that takes a number as an argument, increments the number by +1 and returns the result.
+
+function addition(num) {
+	return ++num
 }
 
+console.log(addition(2))
 
 
 
