@@ -930,3 +930,15 @@ const comp = (str1, str2) => str1.split('').length == str2.split('').length ? tr
 
 
 console.log(comp('Ross', 'Cross'))
+
+
+//Create a function that takes an array as an argument and returns true or false depending on whether the average of all elements in the array is a whole number or not.
+
+
+const isAvgWhole = arr => Number.isInteger(arr.reduce((a, b) => a + b)/arr.length)
+
+
+console.log(isAvgWhole([4, 4, 4, 4]))
+
+
+
