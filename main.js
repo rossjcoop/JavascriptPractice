@@ -941,4 +941,30 @@ const isAvgWhole = arr => Number.isInteger(arr.reduce((a, b) => a + b)/arr.lengt
 console.log(isAvgWhole([4, 4, 4, 4]))
 
 
+//Create a function that takes a number as an argument and returns the amount of digits it has.
+
+function findDigitAmount(num) {
+	return num.toString().length
+}
+
+console.log(findDigitAmount(14568))
+
+
+
+//Create a function that: - Takes a number, a string, and an array as parameters (in that order) - Adds up points based on how many times the number or string is in the array - For example: - If the number is in the array x times, then that is x points - If the string is in the array y times, then that is y+1 points - Returns total number of points calculated
+
+// function stretchTruth(num,str,arr) {
+// 	// let total = 0
+// 	// typeof str === 'string' ? total++ : !total
+
+
+
+// }	// arr.forEach(item => item === num || str ? total++ : !total)
+
+const stretchTruth = (num, str, arr) => (arr.reduce((a, c) => c === num || c === str ? ++a : a, 0)) + (typeof str === 'string' ? 1 : 0)
+
+
+
+console.log(stretchTruth(5, '5', [5, '5', 5, 5, 6, '5']))
+
 
