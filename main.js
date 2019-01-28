@@ -974,6 +974,23 @@ console.log(stretchTruth(5, '5', [5, '5', 5, 5, 6, '5']))
 
 function sortByLength(arr) {
 	return arr.sort((a, b) => a.length - b.length)
+
+//nested loop
+// for (let i=0; i<arr.length;i++){
+// 		for (let j=0; j<arr.length-1;j++){
+			
+			
+// 			if (arr[j].length>arr[j+1].length)
+// 				{
+// 					var x = arr[j+1];
+// 					arr[j+1]=arr[j];
+// 					arr[j]=x;
+					
+					
+// 				}
+// 		}
+// 	}
+// 	return arr
 }
 
 console.log(sortByLength(['Ross', 'Cooper']))
