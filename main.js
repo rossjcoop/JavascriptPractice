@@ -995,3 +995,17 @@ function sortByLength(arr) {
 
 console.log(sortByLength(['Ross', 'Cooper']))
 
+
+//Create a function that takes an array of 10 numbers (between 0 and 9) and returns a string of those numbers formatted as a phone number (e.g. (555) 555-5555).
+
+
+function formatPhoneNumber(numbers) {
+	let area = numbers.slice(0,3).join('').toString()
+	let number = numbers.slice(3)
+	number.splice(3, 0, '-')
+
+	return `${area} ${number}`
+}
+
+console.log(formatPhoneNumber([7, 0, 2, 2, 8, 3, 7, 8, 9, 1]))
+
