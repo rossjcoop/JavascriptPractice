@@ -1001,11 +1001,23 @@ console.log(sortByLength(['Ross', 'Cooper']))
 
 function formatPhoneNumber(numbers) {
 	let area = numbers.slice(0,3).join('').toString()
-	let number = numbers.slice(3)
-	number.splice(3, 0, '-')
-
-	return `${area} ${number}`
+	let numb = numbers.slice(3)
+	numb.splice(3, 0, '-')
+	return "(" + area + ") " + numb.join('')
 }
+
+// let arr = "(XXX) XXX-XXXX".split(''); ///These two are my favorite
+//   numbers.forEach(n => {
+//     arr[arr.indexOf('X')] = n;
+//   });
+//   return arr.join('');
+
+
+// return numbers.join('').replace(/(...)(...)(.*)/, '($1) $2-$3');
+
+
+
+//return `(${n[0]}${n[1]}${n[2]}) ${n[3]}${n[4]}${n[5]}-${n[6]}${n[7]}${n[8]}${n[9]}`; ///then again, I like this one for it's simplicity.
 
 console.log(formatPhoneNumber([7, 0, 2, 2, 8, 3, 7, 8, 9, 1]))
 
