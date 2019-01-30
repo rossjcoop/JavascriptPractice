@@ -1039,6 +1039,8 @@ function factorial(int) {
  //    	t *= i;
  //    }
  //    return t
+
+ // const factorial = num => num === 1 ? num : num * factorial(num - 1); //love this answer
 }
 
 
