@@ -1021,3 +1021,27 @@ function formatPhoneNumber(numbers) {
 
 console.log(formatPhoneNumber([7, 0, 2, 2, 8, 3, 7, 8, 9, 1]))
 
+
+// Create a function that takes an integer and returns the factorial of that integer. That is, the integer multiplied by all positive lower integers.
+
+
+function factorial(int) {
+	if(int < 0) {
+		return -1;
+	} else if(int == 0) {
+		return 1;
+	} else {
+		return (int * factorial(int - 1));
+	}
+
+	// var t = 1;
+ //  	for(var i = 1; i <= int; i++){ //the method I was trying to achieve
+ //    	t *= i;
+ //    }
+ //    return t
+}
+
+
+
+console.log(factorial(13));
+
