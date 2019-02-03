@@ -1051,9 +1051,8 @@ console.log(factorial(13));
 //Create a function that takes an array of numbers between 1 and 10 (excluding one number) and returns the missing number.
 
 function missingNums(arr) {
-	return arr.sort((a, b) => a - b).reduce((a, c) => c - a != 1 ? c + 1 : c)	
+	return arr.find((x,i) => arr[i + 1] - x > 1 ) + 1
 }
-
 console.log(missingNums([1, 6, 9, 10, 2, 3, 7, 4, 8])) //missing 5 for test
 
 
