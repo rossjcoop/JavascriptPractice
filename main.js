@@ -1040,7 +1040,7 @@ function factorial(int) {
  //    }
  //    return t
 
- // const factorial = num => num === 1 ? num : num * factorial(num - 1); //love this answer
+ // const factorial = num => num === 0 ? 1 : num * factorial(num - 1); //love this answer
 }
 
 
