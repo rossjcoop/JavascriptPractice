@@ -1051,7 +1051,14 @@ console.log(factorial(13));
 //Create a function that takes an array of numbers between 1 and 10 (excluding one number) and returns the missing number.
 
 function missingNums(arr) {
-	return arr.sort((a, b) => a - b).find((x, i) => arr[i + 1] - x > 1) + 1
+	// return arr.sort((a, b) => a - b).find((x, i) => arr[i + 1] - x > 1) + 1 doesn't work if missing number is at the beginning or end.
+	return ((arr.length + 1) * (arr.length + 2) / 2) - arr.reduce((a,c) => a + c) ///this works, but probably wouldn't work if there are duplicates. Could create a new Set to remove dupes then it would completely work.
+
+	// for (let i = 1; i <= arr.length + 1; i++) {
+ //    if (arr.indexOf(i) === -1) return i; ///This method is cool as well using the index number to find if that number exists. Personally, I kind of like the math way.
+  }
+
+
 }
 console.log(missingNums([1, 6, 9, 10, 2, 3, 7, 4, 8])) //missing 5 for test
 
