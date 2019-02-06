@@ -1058,11 +1058,18 @@ function missingNums(arr) {
  //    if (arr.indexOf(i) === -1) return i; ///This method is cool as well using the index number to find if that number exists. Personally, I kind of like the math way.
   }
 
-
-}
 console.log(missingNums([1, 6, 9, 10, 2, 3, 7, 4, 8])) //missing 5 for test
 
 
+
+//Create a function that takes a number as an argument and returns true or false depending on whether the number is symmetrical or not. A number is symmetrical when it is the same as its reverse.
+
+function isSymmetrical(num) {
+	return num.toString().split('').reverse().join('') == num ? true : false
+}
+
+
+console.log(isSymmetrical(488))
 
 
 
