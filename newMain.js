@@ -32,7 +32,7 @@ if([] == true){
 
 let x = null, y;
 
-let z = ([] === true || [] == true || x===y && "hi"
+let z = ([] === true || [] == true || x===y && "hi") ///without parentheses it doesn't work as I thought. 
 
 console.log(z)
 
@@ -60,3 +60,36 @@ for(let i = 0; i < someArr.length; i++) {
 
 
 someArr.forEach((item, index) => setTimeout(() => console.log("Index " + index + " , element " + item), 3000));
+
+
+
+
+
+//find the lowest price in the array, then find the highest price in the array after that
+
+let stockPrices = [12, 3, 5, 8, 4, 1, 10, 7]
+
+let lowestPrice = Math.floor(...stockPrices)
+let lowestIndex = stockPrices.findIndex(lowestPrice)
+
+
+
+
+let highestPriceAfter = 0
+let highestIndexAfter = 0
+
+
+
+//What I need to do is get the net result of each price and sell at each price afterward to find the worse index and best index so
+
+
+//So let's start with price of 12 and you have index 0. If you sold in the next result you would be -9, next, -7, -4, -8, -11, -2, -5. Highest result -2, index 6
+//Next, (3) +2, +5, +1, -2, +7, +4 Highest result +7 index 6
+//Next, (5) +3, -1, -4, +5, +2 Highest result +5 index 6
+//Next, (8) -4, -7, +2, -1 highest result +2 index 6
+//Next, (4) -3, +6, +3 highest result +6 index 6
+//Next, (1) +9, +6 highest result +9 index 6
+//Next, (10) -3, highest result -3 index 7
+
+
+
