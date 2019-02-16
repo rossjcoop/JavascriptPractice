@@ -65,20 +65,7 @@ let someArr = [10,20,30,40]
 
 
 
-//find the lowest price in the array, then find the highest price in the array after that
-
 let stockPrices = [12, 3, 5, 8, 4, 1, 10, 7]
-
-let lowestPrice = Math.floor(...stockPrices)
-// let lowestIndex = stockPrices.findIndex(lowestPrice)
-
-
-
-
-let highestPriceAfter = 0
-let highestIndexAfter = 0
-
-
 
 //What I need to do is get the net result of each price and sell at each price afterward to find the worse index and best index so
 
@@ -90,32 +77,50 @@ let highestIndexAfter = 0
 //Next, (4) -3, +6, +3 highest result +6 index 6
 //Next, (1) +9, +6 highest result +9 index 6
 //Next, (10) -3, highest result -3 index 7
+//Last, (7) highest result 0 index 7
 
 
-const bestStockPrice = (arr) => arr.forEach(findBest)
+function bestStockPrice(arr) {
+	
+	let scenarios = [];
+	arr.forEach(findScenarios);
+
+	function findScenarios(element, index, array) {
+		let startingPrice = element;
+		let startingIndex = index;
+		let highestPrice = Math.max.apply(Math, slicer(array, index));
+		let highestIndex = array.findIndex(item => item === highestPrice);
+		let netResult = highestPrice - element;
+		
+		scenarios.push({startingIndex, startingPrice, highestIndex, highestPrice, netResult})
+
+		// console.log(element, array)
+	//So, we have successfully figured out the highest price possible on an array on a given staring index, next step will be to subtract the highest price, from the starting price so we have the net result possible.
+
+	//After we run through each item in the array, we can then compare to see at which starting price is best to yield the highest result and we will have all the info of indecies available!!
+		
+
+		function slicer(arr, index) { ///I need this logic incase we are at the end of the array.
+			if(index === (arr.length - 1)){
+				return [arr[index]];
+			} else {
+				return arr.slice(index + 1);
+			}
+		}
+	}
+
+	
+
+	function findBestScenario(arr) {
+		let bestScenario = arr.find(item => item.netResult === Math.max.apply(Math, arr.map(item => item.netResult)));
+
+		return "You should buy at $" + bestScenario.startingPrice + " at index " + bestScenario.startingIndex + " to net a gain of $" + bestScenario.netResult + " when you sell at $" + bestScenario.highestPrice + " at index " + bestScenario.highestIndex + "."
+	}
 
 
 
-function findBest(element, index, array) {
-	let highestPrice = Math.max.apply(Math, slicer(array, index));
-	console.log(highestPrice)
-	// console.log(element, array)
-//So, we have successfully figured out the highest price possible on an array on a given staring index, next step will be to subtract the highest price, from the starting price so we have the net result possible.
 
-//After we run through each item in the array, we can then compare to see at which starting price is best to yield the highest result and we will have all the info of indecies available!!
-
-
+	return findBestScenario(scenarios)
 }
 
 console.log(bestStockPrice(stockPrices))
-
-
-///I need this to run incase we run to the end of the array.
-function slicer(arr, index) {
-	if(index === (arr.length - 1)){
-		return [arr[index]];
-	} else {
-		return arr.slice(index + 1)
-	}
-}
-
