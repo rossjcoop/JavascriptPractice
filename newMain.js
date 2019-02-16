@@ -51,15 +51,15 @@ console.log(reversal("Hello from Company"))
 let someArr = [10,20,30,40]
 
 
-for(let i = 0; i < someArr.length; i++) {        
-	setTimeout(function(){
-		console.log("Index " + i + " , element " + someArr[i])
-	}, 3000);
+// for(let i = 0; i < someArr.length; i++) {        
+// 	setTimeout(function(){
+// 		console.log("Index " + i + " , element " + someArr[i])
+// 	}, 3000);
 
-}
+// }
 
 
-someArr.forEach((item, index) => setTimeout(() => console.log("Index " + index + " , element " + item), 3000));
+// someArr.forEach((item, index) => setTimeout(() => console.log("Index " + index + " , element " + item), 3000));
 
 
 
@@ -70,7 +70,7 @@ someArr.forEach((item, index) => setTimeout(() => console.log("Index " + index +
 let stockPrices = [12, 3, 5, 8, 4, 1, 10, 7]
 
 let lowestPrice = Math.floor(...stockPrices)
-let lowestIndex = stockPrices.findIndex(lowestPrice)
+// let lowestIndex = stockPrices.findIndex(lowestPrice)
 
 
 
@@ -92,4 +92,30 @@ let highestIndexAfter = 0
 //Next, (10) -3, highest result -3 index 7
 
 
+const bestStockPrice = (arr) => arr.forEach(findBest)
+
+
+
+function findBest(element, index, array) {
+	let highestPrice = Math.max.apply(Math, slicer(array, index));
+	console.log(highestPrice)
+	// console.log(element, array)
+//So, we have successfully figured out the highest price possible on an array on a given staring index, next step will be to subtract the highest price, from the starting price so we have the net result possible.
+
+//After we run through each item in the array, we can then compare to see at which starting price is best to yield the highest result and we will have all the info of indecies available!!
+
+
+}
+
+console.log(bestStockPrice(stockPrices))
+
+
+///I need this to run incase we run to the end of the array.
+function slicer(arr, index) {
+	if(index === (arr.length - 1)){
+		return [arr[index]];
+	} else {
+		return arr.slice(index + 1)
+	}
+}
 
